@@ -34,7 +34,7 @@ class Fruit {
     public String getName() {
         return name;
     }
-    // not override equals method.
+    // equals method is not overriden.
     public boolean equals(Fruit o) {
         if (this == o) return true;
         if (!(o instanceof Fruit)) return false;
