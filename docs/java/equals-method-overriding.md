@@ -62,7 +62,7 @@ public void testEquals() {
     assertEquals(1, fruits.size());
 }
 ```
-testEquals() 메서드를 보면, apple이라는 이름을 갖는 2개의 Fruit 객체를 Set에 담았다. Set에 담았으니 기대한 값은 1이었지만, 사실상 2가 반환되어 AssertionError가 발생한다. 분명히 우리가 기대했던 것과는 다를 것이다.  
+testEquals()를 보면, apple이라는 이름을 갖는 2개의 Fruit 객체를 Set에 담았다. Set에 담았으니 기대한 값은 1이었지만, 사실상 2가 반환되어 AssertionError가 발생한다. 우리가 기대했던 것과는 다른 결과이다.  
 
 HashSet은 내부적으로 HashMap을 사용하고 있고, add()가 호출될 때마다 HashMap의 putVal() 을 호출하게 된다. putVal() 안에는 equals() 가 있는데, 여기서 내가 overloading한 equals() 가 아닌 Object.equals() 를 호출해서 new Fruit("apple") 을 다르다고 판단한 것이다.  
 
@@ -97,7 +97,8 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
 ```
 
 ## summary
-- equals 메서드를 오버로딩이 아닌 오버라이딩해야하는 이유는 이미 잘 정의되어 있는 java의 메서드들을 제대로 재사용하기 위함이다.
+- equals 메서드를 정의하지 않으면, 객체간 논리적 동치성을 보장할 수 없다.
+- equals 메서드를 정의할 때, 오버로딩이 아닌 오버라이딩해야하는 이유는 이미 잘 정의되어 있는 java의 메서드들을 제대로 재사용하기 위함이다.
 
 
 
