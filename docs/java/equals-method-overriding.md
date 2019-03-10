@@ -2,6 +2,7 @@
 layout: default
 title: Equals Method Overriding
 parent: Java
+comments: true
 nav_order: 1
 ---
 
