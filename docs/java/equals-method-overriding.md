@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Equals Method Overriding
 parent: Java
 comments: true
