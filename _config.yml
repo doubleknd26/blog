@@ -31,3 +31,6 @@ color_scheme: nil
 # aux_links:
 #  "Just the Docs on GitHub":
 #    - "//github.com/pmarsceill/just-the-docs"
+
+plugins:
+  - jekyll-sitemap
