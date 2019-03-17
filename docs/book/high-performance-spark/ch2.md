@@ -82,9 +82,27 @@ permalink: /docs/book/high-performance-spark/ch2
 <br>
 
 ### 넓은 종속성 vs 좁은 종속성
+> coursera, [Wide vs Narrow Dependencies](https://www.coursera.org/lecture/scala-spark-big-data/wide-vs-narrow-dependencies-shGAX)
+
+![wide vs narrow dependencies](https://image.slidesharecdn.com/sparkoverview-151003203756-lva1-app6892/95/ibm-spark-technology-center-realtime-advanced-analytics-and-machine-learning-with-spark-and-cassandra-12-638.jpg?cb=1443904732)  
+[image3] wide vs narrow dependencies[^3]
+
+좁은 종속성
+- 자식 RDD의 각 파티션이 부모 RDD의 파티션들에 대해 단순한 종속성을 가지는 것이다.
+- 부모 RDD의 파티션은 최대 한 개의 자식 RDD 파티션에서 사용된다.
+- 자식 파티션은 부모 파티션의 집합을 파티션의 값에 상관없이 결정할 수 있다.
+
+넓은 종속성
+- 임의의 데이터만으로 실행할 수 없고, 다른 파티션의 정보를 필요로 한다.
+- 부모 RDD의 파티션은 둘 이상의 자식 RDD 파티션에서 사용될 수 있다. 즉, 셔플이 필요하다.
+- 자식 파티션은 부모 파티션의 집합을 파티션의 값에 따라 결정해야 한다.
+
+
+
 
 
 <br><br><br>
 
 [^1]: spark echosystem, https://cazton.com/consulting/big-data-development/apache-spark
 [^2]: spark memory, https://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/
+[^3]: wide vs narrow dependencies, https://image.slidesharecdn.com/sparkoverview-151003203756-lva1-app6892/95/ibm-spark-technology-center-realtime-advanced-analytics-and-machine-learning-with-spark-and-cassandra-12-638.jpg?cb=1443904732
